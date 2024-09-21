@@ -5,13 +5,14 @@ app = Flask(__name__)
 @app.route('/')
 def check_ua():
     user_agent = request.headers.get('User-Agent', '').lower()
-
+    print(user_agent)
     if 'micromessenger' in user_agent:
         return send_file('wechat.png', mimetype='image/jpeg')
     elif 'alipayclient' in user_agent:
         return redirect("https://qr.alipay.com/fkx19092rwrfit8qoafzl50")
-    elif 'QQ' in user_agent:
+    elif 'qqtheme' in user_agent:
         return send_file('QQ.png', mimetype='image/jpeg')
+        #return redirect("mqqopensdkapi://bizAgent/qm/qr?url=https://i.qianbao.qq.com/wallet/sqrcode.htm?m=tenpay&f=wallet&a=1&ac=CAEQi6616AIYgJnYowZCIDY0NDRiYzRkNTUwNWQzZGVhNjY4ZWMxNTNmZjJiYmE3_xxx_sign&u=755848971&n=%E5%8F%AF%E8%80%90%E7%9A%84%E5%B0%8F%E4%BC%99%E7%BA%B8")
     else:
         html_content = f'''
         <html>
