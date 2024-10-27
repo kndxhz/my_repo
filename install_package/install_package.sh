@@ -31,6 +31,12 @@ if [ "$choice" == "1" ] || [ -z "$choice" ]; then
                 echo "找不到可执行文件，请检查路径是否正确。"
                 exit 1
             fi
+        elif [[ "$url" == *.snap ]]; then
+            # 安装snap文件
+            sudo snap install /tmp/package --classic || {
+                echo "安装snap失败，请检查包是否有效且已签名。"
+                exit 1
+            }
         else
             # 安装下载的deb文件
             sudo dpkg -i /tmp/package
@@ -69,6 +75,12 @@ elif [ "$choice" == "0" ]; then
                 echo "找不到可执行文件，请检查路径是否正确。"
                 exit 1
             fi
+        elif [[ "$package_path" == *.snap ]]; then
+            # 安装snap文件
+            sudo snap install "$package_path" --classic || {
+                echo "安装snap失败，请检查包是否有效且已签名。"
+                exit 1
+            }
         else
             # 安装本地deb文件
             sudo dpkg -i "$package_path"
