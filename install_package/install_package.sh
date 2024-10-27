@@ -32,9 +32,9 @@ if [ "$choice" == "1" ] || [ -z "$choice" ]; then
                 exit 1
             fi
         elif [[ "$url" == *.snap ]]; then
-            # 安装snap文件
-            sudo snap install /tmp/package --classic || {
-                echo "安装snap失败，请检查包是否有效且已签名。"
+            # 安装snap文件，使用 --dangerous 选项
+            sudo snap install /tmp/package --classic --dangerous || {
+                echo "安装snap失败，请检查包是否有效。"
                 exit 1
             }
         else
@@ -76,9 +76,9 @@ elif [ "$choice" == "0" ]; then
                 exit 1
             fi
         elif [[ "$package_path" == *.snap ]]; then
-            # 安装snap文件
-            sudo snap install "$package_path" --classic || {
-                echo "安装snap失败，请检查包是否有效且已签名。"
+            # 安装snap文件，使用 --dangerous 选项
+            sudo snap install "$package_path" --classic --dangerous || {
+                echo "安装snap失败，请检查包是否有效。"
                 exit 1
             }
         else
