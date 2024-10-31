@@ -32,6 +32,8 @@ shutdown
 {¨config¨{¨headerColor¨¨transparent¨¨headerStyle¨¨dark¨¨background¨{¨img¨¨assets/img/bg/2.jpg¨}}¨dashboard¨|{¨type¨¨btn¨¨ico¨¨fal fa-power-off¨¨mode¨Ê¨t0¨´´¨t1¨¨文本2¨¨bg¨Ê¨cols¨Í¨rows¨Í¨key¨¨btn-pc¨´x´Ë´y´Í¨lstyle¨Ë¨clr¨¨#00A90C¨}{ß9¨deb¨ßDÉßHÉßIÑßJÍßK¨debug¨´x´É´y´ÉßMÊ}{ß9¨inp¨ßHÊßIÑßJËßK¨inp-u6l¨´x´É´y´Ñ}{ß9¨tim¨ßHÉßIËßJËßK¨timing¨´x´É´y´¤A}÷¨actions¨|¦¨cmd¨¦¨switch¨‡¨text¨‡¨on¨¨打开?name¨¨off¨¨关闭?name¨—÷¨triggers¨|{¨source¨ßX¨source_zh¨¨开关状态¨¨state¨|ßZßb÷¨state_zh¨|¨打开¨¨关闭¨÷}÷¨rt¨|÷}
 ```
 # [3in1](./3in1/)
+> [\!WARNING]
+> 如果在QQ平台搭建，域名可能会被傻逼QQ拦截！
 这是一个三码（微信、支付宝、QQ）合一的小程序</br>
 可以实现基础的UA判断，返回不同内容</br>
 但是微信需要长按扫描、支付宝可以直接跳转、QQ需要保存到相册（腾讯我超你妈）</br>
