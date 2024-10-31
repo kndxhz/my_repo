@@ -56,7 +56,8 @@ key.db是秘钥数据库，可以使用数据库查看软件（如Navicat）打�
 3. 运行```pip install pypinyin```安装依赖库</br>
 4. ```python first_name.py```直接运行程序</br>
 # [install_package](./install_package/)
+# install_package
 这个项目可以帮助你安装软件包(其实是我自己懒)</br>
-支持二进制压缩包、snap软件包、deb软件包</br>
+支持二进制压缩包、snap软件包、deb软件包、rpm软件包</br>
 支持在线安装、离线安装</br>
 具体的你run一下脚本就都知道啦
