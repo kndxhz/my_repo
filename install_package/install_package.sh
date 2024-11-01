@@ -37,6 +37,12 @@ if [ "$choice" == "1" ] || [ -z "$choice" ]; then
                 echo "安装snap失败，请检查包是否有效。"
                 exit 1
             }
+        elif [[ "$url" == *.rpm ]]; then
+            # 安装rpm文件
+            sudo rpm -i /tmp/package || {
+                echo "安装rpm失败，请检查包是否有效。"
+                exit 1
+            }
         else
             # 安装下载的deb文件
             sudo dpkg -i /tmp/package
@@ -79,6 +85,12 @@ elif [ "$choice" == "0" ]; then
             # 安装snap文件，使用 --dangerous 选项
             sudo snap install "$package_path" --classic --dangerous || {
                 echo "安装snap失败，请检查包是否有效。"
+                exit 1
+            }
+        elif [[ "$package_path" == *.rpm ]]; then
+            # 安装rpm文件
+            sudo rpm -i "$package_path" || {
+                echo "安装rpm失败，请检查包是否有效。"
                 exit 1
             }
         else
